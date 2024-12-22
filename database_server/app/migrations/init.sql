@@ -1,14 +1,14 @@
-# שמות מבצעי האירוע
+-- שמות מבצעי האירוע
 CREATE TABLE terrorist_organizations (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL UNIQUE
 );
-# סוגי הנשק/התקפות
+-- סוגי הנשק/התקפות
 CREATE TABLE weapon_types (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) UNIQUE
 );
-# סוג מטרה
+-- סוג מטרה
 CREATE TABLE target_types (
     id SERIAL PRIMARY KEY,
     type VARCHAR(255) UNIQUE
@@ -18,7 +18,7 @@ CREATE TABLE motive (
     id SERIAL PRIMARY KEY,
     motive VARCHAR(255) UNIQUE
 );
-# תאריך
+-- תאריך
 CREATE TABLE dates (
     id SERIAL PRIMARY KEY,
     day INTEGER,
@@ -26,7 +26,7 @@ CREATE TABLE dates (
     year INTEGER NOT NULL,
     UNIQUE(day, month, year)
 );
-# מיקום שמי
+-- מיקום שמי
 CREATE TABLE locations (
     id SERIAL PRIMARY KEY,
     city VARCHAR(255) NOT NULL,
@@ -34,14 +34,14 @@ CREATE TABLE locations (
     region VARCHAR(255) NOT NULL,
     UNIQUE(city, country, region)
 );
-# מיקום קווי אורך ורוחב
+-- מיקום קווי אורך ורוחב
 CREATE TABLE coordinate(
     id SERIAL PRIMARY KEY,
     latitude DECIMAL(10,8),
     longitude DECIMAL(11,8),
     UNIQUE (latitude, longitude)
                        );
-# טבלת אירועים (טבלה ראשית\מקשרת)
+-- טבלת אירועים (טבלה ראשית\מקשרת)
 CREATE TABLE events (
     id SERIAL PRIMARY KEY,
     date_id INTEGER REFERENCES dates(id),
