@@ -1,0 +1,19 @@
+# Environment
+.env
+.venv
+env/
+venv/
+
+# Data
+docker/postgres/data/
+*.csv
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE
+.vscode/
+.idea/
