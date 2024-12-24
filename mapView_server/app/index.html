@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <form id="myForm" class="header">
+                <div id="location">
+                    <div>
+                        <label for="limit">Limit</label>
+                        <input type="number" id="limit" >
+                    </div>
+                    <div>
+                        <label for="country">Country</label>
+                        <input type="text" id="country">
+                    </div>
+                    <div>
+                        <label for="province">Province</label>
+                        <input type="text" id="province">
+                    </div>
+                    <div>
+                        <label for="region">Region</label>
+                        <input type="text" id="region">
+                    </div>
+                    <div>
+                        <label for="city">City</label>
+                        <input type="text" id="city">
+                    </div>
+                    <div>
+                        <label for="start-date">Start Date</label>
+                        <input type="date" id="start-date" placeholder="1990...">
+                    </div>
+                    <div>
+                        <label for="end-date">End Date</label>
+                        <input type="date" id="end-date" placeholder="2999...">
+                    </div>
+                    <div>
+                        <label for="key_word">End Date</label>
+                        <input type="text" id="key_word" placeholder="kill">
+                    </div>
+                </div>
+                <div>
+                    <label for="question">Select option</label>
+                    <select id="question" name="question">
+                        <option value="avg_fatal_event">get avg fatal event for area</option>
+                        <option value="most_common_group_for_area">get most common group for area</option>
+                        <option value="event_percentage_change">get event percentage change</option>
+                        <option value="groups_with_same_target">get groups with same target by area</option>
+                        <option value="groups_with_same_attack">get groups with same attack by area</option>
+                        <option value="top_locations_by_unique_groups">get top locations by unique groups</option>
+                        <option value="search_old_in_elastic">search historic terror events by keyword</option>
+                        <option value="search_new_in_elastic">search new terror events by keyword</option>
+                        <option value="search_in_elastic">search terror events by keyword</option>
+                        <option value="search_in_elastic_by_dates">search historic terror events by keyword and dates</option>
+                    </select>
+                    <div style="display: flex; justify-content: end;">
+                        <button type="button" onclick="setImage()">Send</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="map" id="map">
+            <div class="map-placeholder">Map will be displayed here...</div>
+        </div>
+    </div>
+</body>
+<script src="./index.js"></script>
+
+</html>
